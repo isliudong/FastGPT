@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react';
 import { Box, Button, Flex, Card } from '@chakra-ui/react';
-import type { ModelSchema } from '@/types/mongoSchema';
 import { useRouter } from 'next/router';
 import ModelTable from './components/ModelTable';
 import ModelPhoneList from './components/ModelPhoneList';

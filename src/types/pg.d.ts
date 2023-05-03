@@ -1,10 +1,10 @@
-import { ModelDataStatusEnum } from '@/constants/model';
+import { KbDataStatusEnum } from '@/constants/plugins';
 
-export interface PgModelDataItemType {
+export interface PgKbDataItemType {
   id: string;
   q: string;
   a: string;
-  status: `${ModelDataStatusEnum}`;
-  model_id: string;
+  status: `${KbDataStatusEnum}`;
+  kb_id: string;
   user_id: string;
 }

@@ -21,7 +21,7 @@ import {
 } from '@chakra-ui/react';
 import { QuestionOutlineIcon } from '@chakra-ui/icons';
 import type { BoxProps } from '@chakra-ui/react';
-import type { ModelDataItemType } from '@/types/model';
+import type { KbDataItemType } from '@/types/model';
 import { ModelDataStatusMap } from '@/constants/model';
 import { usePagination } from '@/hooks/usePagination';
 import {
@@ -60,7 +60,7 @@ const ModelDataCard = ({ modelId, isOwner }: { modelId: string; isOwner: boolean
     total,
     getData,
     pageNum
-  } = usePagination<ModelDataItemType>({
+  } = usePagination<KbDataItemType>({
     api: getModelDataList,
     pageSize: 10,
     params: {

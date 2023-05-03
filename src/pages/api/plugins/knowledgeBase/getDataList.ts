@@ -4,17 +4,16 @@ import { connectToDatabase } from '@/service/mongo';
 import { authToken } from '@/service/utils/auth';
 import { PgClient } from '@/service/pg';
 import type { PgKbDataItemType } from '@/types/pg';
-import { authModel } from '@/service/utils/auth';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {
     let {
-      modelId,
+      kbId,
       pageNum = 1,
       pageSize = 10,
       searchText = ''
     } = req.query as {
-      modelId: string;
+      kbId: string;
       pageNum: string;
       pageSize: string;
       searchText: string;
@@ -28,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       throw new Error('无权操作');
     }
 
-    if (!modelId) {
+    if (!kbId) {
       throw new Error('缺少参数');
     }
 
@@ -37,15 +36,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
     await connectToDatabase();
 
-    const { model } = await authModel({
-      userId,
-      modelId,
-      authOwner: false
-    });
-
     const where: any = [
-      ...(model.share.isShareDetail ? [] : [['user_id', userId], 'AND']),
-      ['model_id', modelId],
+      ['user_id', userId],
+      'AND',
+      ['kb_id', kbId],
       ...(searchText ? ['AND', `(q LIKE '%${searchText}%' OR a LIKE '%${searchText}%')`] : [])
     ];
 

@@ -9,12 +9,12 @@ export interface ModelUpdateParams {
   security: ModelSchema['security'];
 }
 
-export interface ModelDataItemType {
+export interface KbDataItemType {
   id: string;
   status: 'waiting' | 'ready';
   q: string; // 提问词
   a: string; // 原文
-  modelId: string;
+  kbId: string;
   userId: string;
 }
 

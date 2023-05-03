@@ -32,7 +32,12 @@ const navbarList = [
     link: '/model/list',
     activeLink: ['/model/list', '/model/detail']
   },
-
+  {
+    label: '知识库',
+    icon: 'kb',
+    link: '/knowledgeBase/list',
+    activeLink: ['/knowledgeBase/list', '/knowledgeBase/detail']
+  },
   {
     label: '账号',
     icon: 'user',

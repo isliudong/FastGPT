@@ -136,3 +136,10 @@ export interface PromotionRecordSchema {
   createTime: Date; // 记录时间
   amount: number;
 }
+
+export interface KnowledgeBaseSchema {
+  _id: string;
+  userId: string;
+  updateTime: Date;
+  name: string;
+}
