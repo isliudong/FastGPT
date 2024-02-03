@@ -8,4 +8,3 @@
 6. 修复 - 对话框重新生成无法使用。
 7. [点击查看高级编排介绍文档](https://doc.fastgpt.in/docs/workflow/intro)
 8. [使用文档](https://doc.fastgpt.in/docs/intro/)
-9. [点击查看商业版](https://doc.fastgpt.in/docs/commercial/)
